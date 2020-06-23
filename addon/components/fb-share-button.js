@@ -5,7 +5,8 @@ import layout from '../templates/components/fb-share-button';
 export default ShareButton.extend({
   layout,
   shareURL: 'https://facebook.com/sharer.php',
-  classNames: ['fb-share-button', 'share-button'],
+  classNameBindings: ['default:fb-share-button', 'default:share-button'],
+  default: true,
 
   hashtag: Ember.computed('hashtags', function() {
     if (this.get('hashtags')) {

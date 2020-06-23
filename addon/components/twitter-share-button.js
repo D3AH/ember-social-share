@@ -4,7 +4,8 @@ import layout from '../templates/components/twitter-share-button';
 export default ShareButton.extend({
   layout,
   shareURL: 'https://twitter.com/intent/tweet',
-  classNames: ['twitter-share-button', 'share-button'],
+  classNameBindings: ['default:twitter-share-button', 'default:share-button'],
+  default: true,
   hashtags: '',
   click() {
     let url = this.get('shareURL');
@@ -14,5 +15,5 @@ export default ShareButton.extend({
     url += this.get('via') ? '&via=' + this.get('via') : '';
 
     this.openSharePopup(url);
-  }
+  },
 });

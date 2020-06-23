@@ -1,4 +1,8 @@
-<div class="twitter-div">
-  {{fa-icon 'twitter' prefix='fab' size='lg'}}
-  <span>{{yield}}</span>
-</div>
+{{#if this.default}}
+  <div class="twitter-div">
+    {{fa-icon 'twitter' prefix='fab' size='lg'}}
+    <span>{{yield}}</span>
+  </div>
+{{else}}
+  {{yield}}
+{{/if}}
